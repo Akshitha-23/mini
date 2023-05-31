@@ -1,24 +1,54 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+
+import WelcomePage from './components/WelcomePage';
+import LoginPage from './components/LoginPage';
+import AdminPage from './components/AdminPage';
+import ProfilePage from './components/ProfilePage';
+import RegPage from './components/RegPage';
 import './App.css';
+import ForgotPasswordPage from './components/ForgotPasswordPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/admin" activeClassName="active" exact>
+                Login as Admin
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/login" activeClassName="active">
+                Login as Student
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/" exact>
+            <WelcomePage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/admin">
+            <AdminPage />
+          </Route>
+          <Route path="/forgot-password">
+            <ForgotPasswordPage />
+          </Route>
+          <Route path="/profile-page">
+            <ProfilePage />
+          </Route>
+          <Route path="/registration-page">
+            <RegPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

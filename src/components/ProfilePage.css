@@ -1,0 +1,20 @@
+.profile-page {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  .profile-page h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-page p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Add more styles as needed */
+  
