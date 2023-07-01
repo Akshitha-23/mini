@@ -7,16 +7,13 @@ const location = useLocation();
 const params = new URLSearchParams(location.search);
 const rollnumber = params.get('roll');
 const [users, setUsers] = useState({});
+
+const url = `http://localhost:5000/students/${rollnumber}`;
+
 const fetchUserData = async () => {
   try {
-    const response = await fetch('http://localhost:5000/students', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        rollnumber,
-      }),
+    const response = await fetch(url, {
+      method: 'GET',
     });
 
     if (response.ok) {

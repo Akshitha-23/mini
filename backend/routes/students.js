@@ -18,13 +18,13 @@ router.route('/:roll').get((req,res)=>
 })
 
 
-router.route('/').post((req,res)=>
-{
-    // console.log(req.body.rollnumber)
-    Student.findOne({rollnumber:req.body.rollnumber})
-    .then(student=> { res.send(student)})
-    .catch(err=> res.status(400).json('Eroor : '+err))
-})
+// router.route('/').post((req,res)=>
+// {
+//     // console.log(req.body.rollnumber)
+//     Student.findOne({rollnumber:req.body.rollnumber})
+//     .then(student=> { res.send(student)})
+//     .catch(err=> res.status(400).json('Eroor : '+err))
+// })
 
 //to add a student
 router.route('/add').post((req,res) =>
