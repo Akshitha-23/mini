@@ -25,9 +25,11 @@ connection.once('open',()=>{
 
 const sem1Router = require('./routes/sem1');
 const studentRouter = require('./routes/students');
+const userRouter = require('./routes/user');
 
 app.use('/sem1',sem1Router);
 app.use('/students',studentRouter);
+app.use('/user',userRouter);
 
 app.listen(port,()=>
 {

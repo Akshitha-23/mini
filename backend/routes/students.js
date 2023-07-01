@@ -1,6 +1,7 @@
 const router = require('express').Router();
 let Student = require('../models/students.model');
 
+//all student details
 router.route('/').get((req,res)=>
 {
     Student.find()
@@ -8,12 +9,14 @@ router.route('/').get((req,res)=>
             .catch(err=> res.status(400).json('Error : '+ err));
 });
 
+//student details with specific roll number
 router.route('/:roll').get((req,res)=>
 {
     Student.findOne({rollnumber:req.params.roll})
             .then(student=> res.json(student))
             .catch(err=> res.status(400).json('Eroor : '+err))
 })
+
 
 router.route('/').post((req,res)=>
 {
@@ -23,6 +26,7 @@ router.route('/').post((req,res)=>
     .catch(err=> res.status(400).json('Eroor : '+err))
 })
 
+//to add a student
 router.route('/add').post((req,res) =>
 {
     const roll = req.body.rollnumber;
@@ -47,12 +51,14 @@ router.route('/add').post((req,res) =>
 
 })
 
+//to delete a student with specific rollnumber
 router.route('/delete/:roll').delete((req,res)=>
 {
     Student.findOneAndDelete({rollnumber:req.params.roll})
     .then(()=> res.json("Student deleted"))
     .catch(err=> res.status(400).json('Eroor : '+err))
 })
+
 
 router.route('/update/:roll').put((req,res)=>
 {
