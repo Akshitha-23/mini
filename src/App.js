@@ -6,6 +6,7 @@ import LoginPage from './components/LoginPage';
 import AdminPage from './components/AdminPage';
 import ProfilePage from './components/ProfilePage';
 import RegPage from './components/RegPage';
+import PerformancePage from './components/PerformancePage';
 import './App.css';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
 
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path="/registration-page">
             <RegPage />
+          </Route>
+          <Route path="/performance-page">
+            <PerformancePage />
           </Route>
         </Switch>
       </div>

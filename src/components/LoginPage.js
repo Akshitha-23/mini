@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 
@@ -19,27 +17,7 @@ function LoginPage() {
     setPassword(event.target.value);
   };
 
-  // const handleLoginSubmit =async (event) => {
-  //   event.preventDefault();
-  //   // Perform login logic here, e.g., sending login request to the server
-  //   console.log('Login submitted');
-  //   console.log('Roll Number:', rollnumber);
-  //   console.log('Password:', password);
-  //   var res = await axios.post('http://localhost:5000/students', {"rollnumber": rollnumber });
-  //   console.log(res.data);
-  //   // Reset the form after submission
-  //   setRollNumber('');
-  //   setPassword('');
-
-  //   // Navigate to the profile page
-  //   // history.push('/profile-page',{res});
-  //   const query = `?roll=${encodeURIComponent(res.data.rollnumber)}&name=${encodeURIComponent(res.data.name)}`;
-  //   history.push({
-  //     pathname: '/profile-page',
-  //     search: query
-
-  //   });
-  // };
+  
 
   async function loginUser(event) {
     event.preventDefault()

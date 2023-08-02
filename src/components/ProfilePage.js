@@ -36,7 +36,10 @@ useEffect(() => {
   console.log(users);
 }, [users]);
 
-
+async function viewPerformance()
+{
+  window.location.href="/performance-page?roll="+users.rollnumber;
+}
 
 return (
     <div className="profile-page">
@@ -47,7 +50,9 @@ return (
       <p>Year: {users.year}</p>
       <p>Branch: {users.branch}</p>
       <p>Section: {users.section}</p>
-      {/* Display other profile information here */}
+      <button onClick={viewPerformance} className="view-performance-button">
+          View Performance
+        </button>
     </div>
   );
 }

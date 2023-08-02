@@ -7,7 +7,7 @@ function RegPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [mobile,setMobile] = useState('');
-  const [isRegistered, setIsRegistered] = useState(false);
+  
 
   const handleRollNumberChange = (event) => {
     setRollNumber(event.target.value);
@@ -34,27 +34,6 @@ function RegPage() {
     setMobile(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Perform registration logic here, e.g., sending registration request to the server
-    console.log('Registration submitted');
-    console.log('Roll Number:', rollnumber);
-    console.log('First Name:', firstname);
-    console.log('Second Name:', secondname);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Mobile No.',mobile)
-    // Reset the form after submission
-
-    setRollNumber('');
-    setFirstName('');
-    setSecondName('');
-    setEmail('');
-    setPassword('');
-    setMobile('');
-    // Set registration status to true
-    setIsRegistered(true);
-  };
 
   async function registerUser(event) {
     event.preventDefault()
@@ -74,6 +53,15 @@ function RegPage() {
 
     const data = await response.json()
     console.log(data)
+    console.log(response)
+    if(response.status!==200)
+    {
+      alert('Registration successful')
+    }
+    else{
+      alert('The user already exists!!')
+    }
+
 
     setRollNumber('');
     setPassword('');
@@ -81,16 +69,12 @@ function RegPage() {
     setSecondName('');
     setEmail('');
     setMobile('');
-    // Set registration status to true
-    setIsRegistered(true);
+  
   }
 
   return (
     <div className="registration-page">
       <h1>Registration Page</h1>
-      {isRegistered ? (
-        <p>Registration successful! You have registered successfully.</p>
-      ) : (
         <form onSubmit={registerUser}>
           <div>
             <label>Roll Number:</label>
@@ -116,10 +100,9 @@ function RegPage() {
             <label>Phone no.:</label>
             <input type="number" value={mobile} onChange={handleMobileChange} />
           </div>
-          {/* Add more registration fields here */}
+          {}
           <button type="submit">Register</button>
         </form>
-      )}
     </div>
   );
 }
