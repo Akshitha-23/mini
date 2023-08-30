@@ -1,4 +1,4 @@
-import bgImage from './bg.jpg';
+import bgImage from './wel.jpeg.jpg';
 import React from 'react';
 import './WelcomePage.css';
 
