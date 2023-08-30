@@ -1,20 +1,32 @@
 .profile-page {
     margin: 20px;
+    text-align: center;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: aqua;
+    height: 500px;
   }
   
   .profile-page h1 {
-    font-size: 24px;
+    color: green;
+    font-size: 45px;
     margin-bottom: 10px;
   }
   
   .profile-page p {
     font-size: 16px;
     margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .view-performance-button {
+    background-color: blueviolet;
+    color:white;
+    width: 200px;
+    height: 40px;
+    font-size: large;
   }
   
-  /* Add more styles as needed */
+  
   

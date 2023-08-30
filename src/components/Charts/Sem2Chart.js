@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { Bar,Pie } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Size } from 'react-bootstrap/lib/utils/StyleConfig';
-import './PerformancePage.css';
+import '../PerformancePage.css';
+import './SemCharts.css'
 
-function PerformancePage() {
+export default function Sem2Chart() {
  
 
     const location = useLocation();
@@ -13,7 +14,7 @@ function PerformancePage() {
     const rollnumber = params.get('roll');
     const [users, setUsers] = useState({});
     
-    const url = `http://localhost:5000/sem1/${rollnumber}`;
+    const url = `http://localhost:5000/sem2/${rollnumber}`;
     
     const fetchUserData = async () => {
       try {
@@ -42,7 +43,7 @@ function PerformancePage() {
     }, [users]);
 
    
- const labelss = ['Cprogramming', 'EngineeringDrawing', 'English', 'M1', 'Physics'];
+ const labelss = ['DataStructures', 'M2', 'Chemistry', 'EnvironmentalScience', 'Python'];
 
  const dataa =labelss.map(function getMarks(item)
  {
@@ -75,10 +76,8 @@ function PerformancePage() {
   ]
   };
   return <div className="chartBody" >
-    <p style={{fontSize:50,fontFamily:'sans-serif',textAlign:'center',color:'green'}}> Your Performance
+    <p className='chartTitle'> Your Performance
     </p>
-    <Bar className="Bar" data={chartData } style={{fontWeight:'bold',width:1000,padding:30,backgroundColor:'antiquewhite'}}/>
+    <Bar className="Bar" data={chartData } />
     </div>;
 }
-
-export default PerformancePage;

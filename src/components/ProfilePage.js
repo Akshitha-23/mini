@@ -38,18 +38,19 @@ useEffect(() => {
 
 async function viewPerformance()
 {
-  window.location.href="/performance-page?roll="+users.rollnumber;
+  // window.location.href="/performance-page?roll="+users.rollnumber;
+  window.location.href="/navbarcharts?roll="+users.rollnumber;
 }
 
 return (
     <div className="profile-page">
       <h1>Profile Page</h1>
       <p>Roll Number: {users.rollnumber}</p>
-      <p>Name: {users.name}</p>
-      <p>Degree: {users.degree}</p>
-      <p>Year: {users.year}</p>
-      <p>Branch: {users.branch}</p>
-      <p>Section: {users.section}</p>
+      <p>Name       : {users.name}</p>
+      <p>Degree     : {users.degree}</p>
+      <p>Year       : {users.year}</p>
+      <p>Branch     : {users.branch}</p>
+      <p>Section    : {users.section}</p><br></br>
       <button onClick={viewPerformance} className="view-performance-button">
           View Performance
         </button>

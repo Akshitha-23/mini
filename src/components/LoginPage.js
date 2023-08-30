@@ -37,7 +37,6 @@ function LoginPage() {
 
     if(data.user)
     {
-      alert('Login successful')
       window.location.href="/profile-page?roll="+rollnumber;
     }
     else{

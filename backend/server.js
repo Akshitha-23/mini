@@ -24,10 +24,18 @@ connection.once('open',()=>{
 })
 
 const sem1Router = require('./routes/sem1');
+const sem2Router = require('./routes/sem2');
+const sem3Router = require('./routes/sem3');
+const sem4Router = require('./routes/sem4');
+
 const studentRouter = require('./routes/students');
 const userRouter = require('./routes/user');
 
 app.use('/sem1',sem1Router);
+app.use('/sem2',sem2Router);
+app.use('/sem3',sem3Router);
+app.use('/sem4',sem4Router);
+
 app.use('/students',studentRouter);
 app.use('/user',userRouter);
 

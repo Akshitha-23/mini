@@ -1,0 +1,28 @@
+
+.chartBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  
+  .chartTitle {
+    font-size: 50px;
+    font-family: sans-serif;
+    text-align: center;
+    color: green;
+  }
+  
+  
+  .Bar {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  
+  
