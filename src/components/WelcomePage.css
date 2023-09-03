@@ -10,18 +10,41 @@
 
 .content {
   position: absolute;
+  word-spacing: 10px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: white;
+  text-shadow: 10px 10px 12px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2); /* Adjust opacity as needed */
+  color: white ;
   width: 100%;
   padding-top: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
   font-weight: bold;
+  font-size: 40px;
 }
 
 .content h1 {
   font-size: 32px;
   margin-bottom: 10px;
+}
+
+.title-container {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  color: white;
+  padding: 10px 20px;
+}
+
+.title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

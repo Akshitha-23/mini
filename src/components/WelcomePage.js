@@ -9,9 +9,7 @@ class WelcomePage extends React.Component {
       <div className="welcome-page">
         <img src={bgImage} alt="Background" className="background-image" />
         
-        <div className="content">
-          <h1>Welcome to CVR College Of Engineering</h1>
-         
+        <div className="content">COLLEGE ACADEMIC DASHBOARD
         </div>
       </div>
     );

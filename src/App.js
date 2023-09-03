@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import logo from './logo.webp';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import WelcomePage from './components/WelcomePage';
@@ -25,70 +26,52 @@ function App() {
       
       <div className="container-fluid p-0">
      
-      <nav className="navbar1 navbar-expand-sm navbar-light bg-info ml-auto">
-        <div className="container">
-          <div className="navbar-text ml-auto">{formattedDate}</div>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  Student
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/admin" className="nav-link">
-                  Admin
-                </Link>
-              </li>
-              <li className="nav-item dropdown">
-          <a
-            className="nav-link dropdown-toggle"
-            href="/"
-            
-            id="navbarDropdown"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Contact Us
+      <nav className="navbar-container">
+  <div className="navbar-date">{formattedDate}</div>
+  <div className="navbar-logo"> <img src={logo} alt="Background" className="logo-image" /></div>
+  <ul className="navbar-items">
+    <li className="navbar-item">
+      <Link to="/" className="navbar-link">
+        Home
+      </Link>
+    </li>
+    <li className="navbar-item">
+      <Link to="/login" className="navbar-link">
+        Student
+      </Link>
+    </li>
+    <li className="navbar-item">
+      <Link to="/admin" className="navbar-link">
+        Admin
+      </Link>
+    </li>
+    <li className="navbar-item dropdown">
+      <a
+        className="navbar-link"
+        href="/"
+        id="navbarDropdown"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Contact Us
+      </a>
+      <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+          <a className="dropdown-item" href="/">
+            Phone: 099598 34090
           </a>
-          <ul
-            className="dropdown-menu"
-            aria-labelledby="navbarDropdown"
-          >
-            <li>
-              <a className="dropdown-item" href="/">
-              Phone : 099598 34090
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="/">
-              Email : web@cvr.ac.in
-              </a>
-            </li>
-            </ul>
-            
-            </li>
-          </ul>
-          </div>
-        </div>
-      </nav>
+        </li>
+        <li>
+          <a className="dropdown-item" href="/">
+            Email: web@cvr.ac.in
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
         <Switch>
           <Route path="/" exact>
             <WelcomePage />

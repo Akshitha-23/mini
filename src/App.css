@@ -12,30 +12,46 @@ body {
   padding: 0;
 }
 
-/* Navigation bar */
-.navbar {
-  background-color: #17a2b8;
+/* Custom class for the navbar container */
+.navbar-container {
+  margin: 4px 0; /* Add margin around the navbar */
+  padding: 10px; /* Add padding to the navbar */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space items horizontally */
+  align-items: center; /* Center items vertically */
+  background-color:brown; /* Background color for the navbar */
 }
 
-.navbar-text {
-  color: #ffffff;
-  margin-right: 20px;
+/* Custom class for the date */
+.navbar-date {
+  font-family:Arial, Helvetica, sans-serif;
+  color: wheat;
 }
 
-.navbar-toggler-icon {
-  background-color: #ffffff;
+
+/* Custom class for the navbar items */
+.navbar-items {
+  list-style: none;
+  display: flex; /* Use flexbox for navbar items */
+  margin: 0;
+  padding: 0;
+  
 }
 
-.nav-link {
-  color: #ffffff !important;
+/* Custom class for the navbar item */
+.navbar-item {
+  margin-right: 10px; /* Add spacing between navbar items */
 }
 
-/* Dropdown menu */
-.dropdown-menu {
-  background-color: #17a2b8;
-  border: none;
+/* Style the links in the navbar */
+.navbar-link {
+  text-decoration: none;
+  color: wheat; /* Link color */
+  font-family:Arial, Helvetica, sans-serif;
+  transition: color 0.3s; /* Smooth color transition on hover */
 }
 
-.dropdown-item {
-  color: #b90c0c ;
+/* Change link color on hover */
+.navbar-link:hover {
+  color: white; /* Hovered link color */
 }

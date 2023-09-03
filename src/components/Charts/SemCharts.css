@@ -1,28 +1,61 @@
+/* SemCharts.css */
 
 .chartBody {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background-color: white;
+  margin: 4px;
+}
+
+.chartTitle {
+  font-size: 50px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color:rgb(78, 183, 64);
+  margin-bottom: 20px; /* Add margin for better spacing */
+}
+
+.Bar {
+  width: 100%;
+  max-width: 1000px;
+  height: 1000px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
   
-  
-  .chartTitle {
-    font-size: 50px;
-    font-family: sans-serif;
-    text-align: center;
-    color: green;
-  }
-  
-  
-  .Bar {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: antiquewhite;
-    border-radius: 8px;
-    padding: 20px;
-  }
-  
-  
-  
+}
+
+.noData {
+  text-align: center;
+  font-size: 24px;
+  color: red;
+  margin-top: 20px; /* Add margin to separate it from the chart */
+}
+
+/* Style for chart datasets */
+.Bar .chartjs-render-monitor {
+  padding: 10px; /* Add padding to the chart container */
+}
+
+.studentInfo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  text-align: right;
+  border-radius: 8px;
+  padding: 10px;
+  color:sienna ;
+  font-size: 20px;
+  font-weight:700;
+}
+
+.studentInfo p {
+  margin: 5px;
+}
