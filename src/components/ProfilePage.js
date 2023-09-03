@@ -22,6 +22,7 @@ function ProfilePage() {
         console.log(data);
       } else {
         console.log('Error');
+        console.log(users);
       }
     } catch (error) {
       console.log('Error:', error);

@@ -118,7 +118,9 @@ export default function Sem2Chart() {
   const dataa = labelss.map(function getMarks(item) {
     return users[item];
   });
-
+  console.log("*******");
+  console.log(data2);
+  console.log(data3);
   const chartData = {
     labels: labelss,
     datasets: [

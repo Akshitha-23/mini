@@ -98,6 +98,28 @@ function RegPage() {
       }),
     });
 
+    const checkStudentExists = async (rollnumber) => {
+      try {
+        const response = await fetch(`http://localhost:5000/students/${rollnumber}`);
+        if (response.ok) {
+          const data = await response.json();
+          return data.exists; // Assuming your server returns an object with a "exists" property.
+        } else {
+          return false; // Handle other error cases here
+        }
+      } catch (error) {
+        console.error('Error checking student:', error);
+        return false;
+      }
+    };
+    
+    const studentExists = await checkStudentExists(rollnumber);
+
+    if (!studentExists) {
+      alert('Only valid students can register.');
+      return;
+    }
+
     const data = await response.json();
     console.log(data);
 
