@@ -20,7 +20,7 @@ router.route('/:roll').get((req,res)=>
 })
 .put((req,res)=> {
     const {firstname,secondname} = req.body;
-    const {name} = {name:firstname+secondname};
+    const {name} = {name:firstname+" "+secondname};
     Student.findOneAndUpdate(
         {rollnumber:req.params.roll},
         {$set : {name}},
@@ -99,4 +99,38 @@ router.route('/update/:roll').put((req,res)=>
       })
     .catch(err=> res.status(400).json('Eroor : '+err))
 })
+
+
+router.route('/branch/aiml').get((req, res) => {
+    Student.find({ branch: 'AI & ML' }) 
+      .sort({ rollnumber: 1 }) // Sort by roll number in ascending order
+      .then(students => {
+        res.json(students);
+      })
+      .catch(err => {
+        res.status(500).json({ error: 'Internal Server Error' });
+      });
+  });
+
+  router.route('/branch/ds').get((req, res) => {
+    Student.find({ branch: 'Data Science' }) 
+      .sort({ rollnumber: 1 }) // Sort by roll number in ascending order
+      .then(students => {
+        res.json(students);
+      })
+      .catch(err => {
+        res.status(500).json({ error: 'Internal Server Error' });
+      });
+  });
+
+  router.route('/branch/cs').get((req, res) => {
+    Student.find({ branch: 'Cybersecurity' }) 
+      .sort({ rollnumber: 1 }) // Sort by roll number in ascending order
+      .then(students => {
+        res.json(students);
+      })
+      .catch(err => {
+        res.status(500).json({ error: 'Internal Server Error' });
+      });
+  });
 module.exports = router;

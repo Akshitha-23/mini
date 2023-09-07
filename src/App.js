@@ -15,8 +15,12 @@ import Sem1Chart from "./components/Charts/Sem1Chart";
 import Sem2Chart from "./components/Charts/Sem2Chart"
 import Sem3Chart from "./components/Charts/Sem3Chart"
 import Sem4Chart from "./components/Charts/Sem4Chart"
+
+import HomeAdim from './components/Adminpages/HomeAdim';
+import AimlAdmin from './components/Adminpages/AimlAdmin';
 import { useState ,useEffect} from 'react';
 import { useUser  } from './context/UserContext'; 
+import DsAdmin from './components/Adminpages/DsAdmin';
 
 function App() {
   const currentDate = new Date();
@@ -132,9 +136,19 @@ function App() {
         <Route path="/profile-page">
           {user.username!=null ? <ProfilePage onLogin={handleLogin}/> : <Redirect to="/login" />}
         </Route>
+        <Route path="/admin/home/ds">
+            <DsAdmin/>
+          </Route>
+        <Route path="/admin/home/aiml">
+            <AimlAdmin/>
+          </Route>
+        <Route path="/admin/home">
+            <HomeAdim/>
+          </Route>
           <Route path="/admin">
             <AdminPage />
           </Route>
+          
           <Route path="/forgot-password">
             <ForgotPasswordPage />
           </Route>
@@ -163,6 +177,7 @@ function App() {
               <Navbar />
               <Sem4Chart />
           </Route>
+         
         </Switch>
       </div>
     </Router>
